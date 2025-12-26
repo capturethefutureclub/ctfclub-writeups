@@ -67,8 +67,13 @@ Flag: `$a54vag`
 
 # Flag 6
 ### What is the system machine hostname? (e.g. server01)
+Decoding the previous trail of `f54Avbg4.php` leds us to these bash commands:
 
-From analysing
+<img width="1340" height="666" alt="image" src="https://github.com/user-attachments/assets/a07287bc-879d-403e-a2a9-1da15867a777" />
+
+Now we need to look for the server's response:
+
+
 
 # Flag 7
 ### What is the database password used by Cacti? (e.g. Password123)
