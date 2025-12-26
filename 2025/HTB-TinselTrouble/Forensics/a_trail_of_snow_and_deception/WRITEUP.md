@@ -72,13 +72,9 @@ Decoding the previous trail of `f54Avbg4.php` leds us to these bash commands:
 <img width="1340" height="666" alt="image" src="https://github.com/user-attachments/assets/a07287bc-879d-403e-a2a9-1da15867a777" />
 
 
-Now we need to look for the server's response:
+Now we need to look for the server's response which corresponds to the injected base64 asking for the hostname: `GET /cacti/f54Avbg4.php?q=aG9zdG5hbWU= HTTP/1.1`
 
-<img width="741" height="717" alt="Screenshot at 2025-12-26 17-16-32" src="https://github.com/user-attachments/assets/e8b1a0d9-94b1-45c0-bcc0-dcb37b6491af" />
-
-```
-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
-```
+<img width="371" height="252" alt="Screenshot at 2025-12-26 17-41-58" src="https://github.com/user-attachments/assets/570b4dd2-8f1a-41fd-b571-e36ee2a28d35" />
 
 If you remember the previous file `f54Avbg4.php`, it provided the key and also the encryption/decryption processes. Let's look at the cleaner version:
 
@@ -116,5 +112,280 @@ plaintext = unpad(cipher.decrypt(ciphertext), AES.block_size)
 print(plaintext.decode(errors="ignore"))
 ```
 
+
+This is what we get:
+
+Flag: `tinselmon01`
+
+
 # Flag 7
 ### What is the database password used by Cacti? (e.g. Password123)
+
+This is the response from the last packet of `f54Avbg4.php`:
+
+<img width="741" height="717" alt="Screenshot at 2025-12-26 17-16-32" src="https://github.com/user-attachments/assets/e8b1a0d9-94b1-45c0-bcc0-dcb37b6491af" />
+
+```
+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
+```
+
+Reuse the same python decryptor and copy the long strings from the servers response to the last packet
+
+```
+$ python3 decryptor.py 
+<?php
+/*
+ +-------------------------------------------------------------------------+
+ | Copyright (C) 2004-2024 The Cacti Group                                 |
+ |                                                                         |
+ | This program is free software; you can redistribute it and/or           |
+ | modify it under the terms of the GNU General Public License             |
+ | as published by the Free Software Foundation; either version 2          |
+ | of the License, or (at your option) any later version.                  |
+ |                                                                         |
+ | This program is distributed in the hope that it will be useful,         |
+ | but WITHOUT ANY WARRANTY; without even the implied warranty of          |
+ | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           |
+ | GNU General Public License for more details.                            |
+ +-------------------------------------------------------------------------+
+ | Cacti: The Complete RRDtool-based Graphing Solution                     |
+ +-------------------------------------------------------------------------+
+ | This code is designed, written, and maintained by the Cacti Group. See  |
+ | about.php and/or the AUTHORS file for specific developer information.   |
+ +-------------------------------------------------------------------------+
+ | http://www.cacti.net/                                                   |
+ +-------------------------------------------------------------------------+
+*/
+
+/**
+ * Make sure these values reflect your actual database/host/user/password
+ */
+
+$database_type     = 'mysql';
+$database_port     = '3306';
+$database_retries  = 5;
+$database_ssl      = false;
+$database_ssl_key  = '';
+$database_ssl_cert = '';
+$database_ssl_ca   = '';
+$database_persist  = false;
+
+/**
+ * When the cacti server is a remote poller, then these entries point to
+ * the main cacti server. Otherwise, these variables have no use and
+ * must remain commented out.
+ */
+
+#$rdatabase_type     = 'mysql';
+#$rdatabase_port     = '3306';
+#$rdatabase_retries  = 5;
+#$rdatabase_ssl      = false;
+#$rdatabase_ssl_key  = '';
+#$rdatabase_ssl_cert = '';
+#$rdatabase_ssl_ca   = '';
+
+/**
+ * The poller_id of this system.  set to `1` for the main cacti web server.
+ * Otherwise, you this value should be the poller_id for the remote poller.
+ */
+
+$poller_id = 1;
+
+/**
+ * Set the $url_path to point to the default URL of your cacti install.
+ * For example if your cacti install as at `https://serverip/cacti/` this
+ * would be set to `/cacti/`.
+ */
+
+$url_path = '/cacti/';
+
+/**
+ * Default session name - session name must contain alpha characters
+ */
+
+$cacti_session_name = 'Cacti';
+
+/**
+ * Default Cookie domain - The cookie domain to be used for Cacti
+ */
+
+//$cacti_cookie_domain = 'cacti.net';
+
+/**
+ * Save sessions to a database for load balancing
+ */
+
+$cacti_db_session = false;
+
+/**
+ * Disable log rotation settings for packagers
+ */
+
+$disable_log_rotation = false;
+
+/**
+ * Optional parameters to define scripts and resource paths. These
+ * variables become important when using remote poller installs when the
+ * scripts and resource files are not in the main Cacti web server path.
+ */
+
+//$scripts_path = '/var/www/html/cacti/scripts';
+//$resource_path = '/var/www/html/cacti/resource/';
+
+/**
+ * Optional parameter to define a data input whitelist command string. This
+ * whitelist file will help protect cacti from unauthorized changes to Cacti
+ * data input command string.
+ */
+
+//$input_whitelist = '/usr/local/etc/cacti/input_whitelist.json';
+
+/**
+ * Optional parameter to give explicit path to PHP
+ */
+//$php_path = '/bin/php';
+
+/**
+ * Optional parameter to disable the PHP SNMP extension. If not set, defaults
+ * to class_exists('SNMP').
+ */
+
+//$php_snmp_support = false;
+
+/**
+ * Optional parameter to define the path of the csrf_secret.php path.  This
+ * variable is for packagers who wish to specify an alternate location of
+ * the CRSF secret file.
+ */
+
+//$path_csrf_secret = '/usr/share/cacti/resource/csrf-secret.php';
+
+/**
+ * The following are optional variables for debugging low level system
+ * functions that are generally only used by Cacti Developers to help
+ * identify potential issues in commonly used functions
+ *
+ * To use them, uncomment and the equivalent field will be set in the
+ * $config variable allowing for instant on but still allowing the
+ * ability to fine turn and turn them off.
+ */
+
+/**
+ * Debug the read_config_option program flow
+ */
+#if (!defined('DEBUG_READ_CONFIG_OPTION')) {
+#       define('DEBUG_READ_CONFIG_OPTION', true);
+#}
+
+/**
+ * Automatically suppress the DEBUG_READ_CONFIG_OPTION
+ */
+#if (!defined('DEBUG_READ_CONFIG_OPTION_DB_OPEN')) {
+#       define('DEBUG_READ_CONFIG_OPTION_DB_OPEN', true);
+#}
+
+/**
+ * Always write the SQL command to the cacti log file
+ */
+#if (!defined('DEBUG_SQL_CMD')) {
+#       define('DEBUG_SQL_CMD', true);
+#}
+
+/**
+ * Debug the flow of calls to the db_xxx functions that
+ * are defined in lib/database.php
+ */
+#if (!defined('DEBUG_SQL_FLOW')) {
+#       define('DEBUG_SQL_FLOW', true);
+#}
+
+/**
+ * Debug the connect and disconnect activity
+ * and the first execute from each connection
+ * to the PHP error_log.
+ */
+#if (!defined('DEBUG_SQL_CONNECT')) {
+#       define('DEBUG_SQL_CONNECT', true);
+#}
+
+/**
+ * Allow the use of Proxy IPs when searching for client
+ * IP to be used
+ *
+ * This can be set to one of the following:
+ *   - false: to use only REMOTE_ADDR
+ *   - true: to use all allowed headers (not advised)
+ *   - array of one or more the following:
+ *              'X-Forwarded-For',
+ *              'X-Client-IP',
+ *              'X-Real-IP',
+ *              'X-ProxyUser-Ip',
+ *              'CF-Connecting-IP',
+ *              'True-Client-IP',
+ *              'HTTP_X_FORWARDED',
+ *              'HTTP_X_FORWARDED_FOR',
+ *              'HTTP_X_CLUSTER_CLIENT_IP',
+ *              'HTTP_FORWARDED_FOR',
+ *              'HTTP_FORWARDED',
+ *              'HTTP_CLIENT_IP',
+ *
+ * NOTE: The following will always be checked:
+ *              'REMOTE_ADDR',
+ */
+$proxy_headers = null;
+
+/*
+ * Set this to define the default i18n handler if not set
+ * in the database.  For valid values, see CACTI_LANGUAGE_HANDLER
+ * constants but only use the value not the constant name
+ * here because we have not included global_constants.php
+ * yet
+ */
+$i18n_handler = null;
+
+/*
+ * Set this to define ignore everything else and force a
+ * specific language.  Should be in the format of a string
+ * such as 'es-ES'
+ */
+$i18n_force_language = null;
+
+/**
+ * Define the location to log general i18n function calls
+ * to for debugging purposes.  Note that if you use /tmp
+ * some systemd systems will remap that folder to special
+ * locations under /tmp/systemd<uniqueid>/tmp
+ */
+$i18n_log = null;
+
+/**
+ * Define the location to log translation i18n function calls
+ * to for debugging purposes.  Note that if you use /tmp
+ * some systemd systems will remap that folder to special
+ * locations under /tmp/systemd<uniqueid>/tmp
+ */
+$i18n_text_log = null;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$database_default  = 'cacti';
+$database_hostname = 'db';
+$database_username = 'cacti';
+$database_password = 'zqvyh2fLgyhZp9KV';
+
+```
+
+Flag: `zqvyh2fLgyhZp9KV`
