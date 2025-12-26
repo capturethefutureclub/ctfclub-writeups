@@ -8,7 +8,10 @@ Download the pcap file and open it on Wireshark to start the analysis.
 # Flag 1
 ### What is the Cacti version in use? (e.g. 7.1.0)
 
+Enter the wireshark filter: `http contains "version"`
 
+
+<img width="646" height="714" alt="Screenshot at 2025-12-26 14-36-46" src="https://github.com/user-attachments/assets/87fa098c-db52-4cc3-a084-7fa700a58264" />
 
 # Flag 2
 ### What is the set of credentials used to log in to the instance? (e.g., username:password)
