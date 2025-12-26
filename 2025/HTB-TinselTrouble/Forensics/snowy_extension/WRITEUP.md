@@ -249,3 +249,106 @@ A very simple code highlighting extension for developers, simple and easy to use
 Highlights important code with vibrant holiday colors and syntax features.  
 
 ```
+
+## Step 3
+
+> From static analysis alone, we can establish:
+> This is a malicious VS Code extension
+> The malicious logic is:
+>> - gated by hostname
+>> - obfuscated via XOR + Base64
+>> - designed for credential exfiltration
+
+> The challenge is forensics, not exploitation
+> The description explicitly asks us to:
+>> inspect code highlighting anomalies, trace tampering patterns, and reveal how the Gingerbit Gremlin sabotaged Everlight
+
+inspect code highlighting anomalies, trace tampering patterns, and reveal how the Gingerbit Gremlin sabotaged Everlight
+
+So the flag is not “what does the malware steal”, but who / what authored it.
+
+From inspecting the following files, especially `extension.js`, we see a group of suspicious snippets of scripts.
+
+We are also given a XOR key which 
+
+```
+
+function UhlAGtoaWM() {
+        const ZPtKUr = 'sn0wwyy';
+        const QMOHbr = 'gl0be1337';
+        return ZPtKUr + QMOHbr; 
+       }
+```
+> XOR Key: `sn0wwyygl0be1337`
+
+
+We also have a this suspicious array of base64:
+
+```
+const iAjuwiisFf = [
+                "XQ9HBA==",
+                "XQVFFRI=",
+                "XR1DHw==",
+                "XQteAQ==",
+                "XR5UEQ==",
+                "XQpfFA8=",
+                "OzpyDDpNFQ4PWVIQQmw=",
+                "JT1zKDIBDQICQ1NVXwY=",
+                "LF9DKBlJDQ9dXgU6XwBESg=="
+                ]
+```
+Which is used to the following scripts:
+```
+const ext = iAjuwiisFf.map(qmJJvtPnmp);
+
+if (ext.some(p => item.includes(p)))
+```
+These decode to file / directory name substrings
+That means:
+- They must be printable
+- They must make sense
+- They are the real payload
+
+## Step 4
+Let's use the generated code from ChatGPT to decode the following obfuscated code:
+```
+import base64
+
+key = b"sn0wwyygl0be1337"
+
+def dec(s):
+    b = base64.b64decode(s)
+    return bytes([b[i] ^ key[i % len(key)] for i in range(len(b))]).decode()
+
+arr = [
+  "XQ9HBA==",
+  "XQVFFRI=",
+  "XR1DHw==",
+  "XQteAQ==",
+  "XR5UEQ==",
+  "XQpfFA8=",
+  "OzpyDDpNFQ4PWVIQQmw=",
+  "JT1zKDIBDQICQ1NVXwY=",
+  "LF9DKBlJDQ9dXgU6XwBESg=="
+]
+
+for x in arr:
+    print(dec(x))
+```
+
+Run the following script:
+```
+.aws
+.kube
+.ssh
+.env
+.pdf
+.docx
+HTB{M4lici0us_
+VSC_Extens10n5
+_1s_n0th1ng_n3w}
+
+=== Code Execution Successful ===
+```
+
+Flag: `HTB{M4lici0us_VSC_Extens10n5_1s_n0th1ng_n3w}`
