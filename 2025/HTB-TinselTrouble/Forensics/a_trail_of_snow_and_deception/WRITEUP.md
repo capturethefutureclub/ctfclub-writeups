@@ -15,6 +15,11 @@ Enter the wireshark filter: `http contains "version"`
 
 # Flag 2
 ### What is the set of credentials used to log in to the instance? (e.g., username:password)
+Enter filter: `http contains "password"`
+
+<img width="454" height="688" alt="Screenshot at 2025-12-26 14-56-48" src="https://github.com/user-attachments/assets/a807083a-722f-470d-bafd-4ca29c7d1ccd" />
+
+Flag: `marnie.thistlewhip:Z4ZP_8QzKA`
 
 # Flag 3
 ### Three malicious PHP files are involved in the attack. In order of appearance in the network stream, what are they? (e.g., file1.php,file2.php,file3.php)
